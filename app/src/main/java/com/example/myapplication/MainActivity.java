@@ -24,7 +24,13 @@ public class MainActivity extends AppCompatActivity {
         btnSortMatNumber.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                
+                String matNumber = "";
+                int[] sortedMatNumber = new int[8];
+                matNumber = etxtMatNumber.getText().toString();
+
+                for(int i = 0; i < sortedMatNumber.length; i++){
+                    sortedMatNumber[i] = Character.getNumericValue(matNumber.charAt(i));
+                }
             }
         });
     }
