@@ -38,6 +38,12 @@ public class MainActivity extends AppCompatActivity {
                     Arrays.sort(sortedMatNumber);
                 }
 
+                StringBuilder builder = new StringBuilder();
+                for (int value : sortedMatNumber) {
+                    builder.append(value);
+                }
+
+                txtvSortedMatNumber.setText(builder.toString());
             }
         });
     }
