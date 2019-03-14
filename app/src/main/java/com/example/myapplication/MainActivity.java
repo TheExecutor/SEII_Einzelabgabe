@@ -7,6 +7,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.util.Arrays;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -31,6 +33,11 @@ public class MainActivity extends AppCompatActivity {
                 for(int i = 0; i < sortedMatNumber.length; i++){
                     sortedMatNumber[i] = Character.getNumericValue(matNumber.charAt(i));
                 }
+
+                for(int i = 0; i < sortedMatNumber.length - 1; i++){
+                    Arrays.sort(sortedMatNumber);
+                }
+
             }
         });
     }
