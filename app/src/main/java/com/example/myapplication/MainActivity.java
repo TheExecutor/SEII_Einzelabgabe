@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -32,17 +33,18 @@ public class MainActivity extends AppCompatActivity {
                 List<Integer> sortedMatNumber = new ArrayList<>();
                 matNumber = etxtMatNumber.getText().toString();
 
-                for(int i = 0; i < sortedMatNumber.size(); i++){
+                for(int i = 0; i < 8; i++){
                     sortedMatNumber.add( Character.getNumericValue(matNumber.charAt(i)));
                 }
 
-                for(int i = 0; i < sortedMatNumber.size() - 1; i++){
+                for(int i = 0; i < sortedMatNumber.size(); i++){
                     if(isPrime(sortedMatNumber.get(i))== true){
                         sortedMatNumber.remove(i);
                     }
                 }
 
-                
+                Collections.sort(sortedMatNumber);
+
                 StringBuilder builder = new StringBuilder();
                 for (int value : sortedMatNumber) {
                     builder.append(value);
