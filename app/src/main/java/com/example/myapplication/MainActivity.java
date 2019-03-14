@@ -2,6 +2,7 @@ package com.example.myapplication;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -19,5 +20,12 @@ public class MainActivity extends AppCompatActivity {
         final EditText etxtMatNumber = findViewById(R.id.etxtMatNumber);
 
         final TextView txtvSortedMatNumber = findViewById(R.id.txtvSortedMatNumber);
+
+        btnSortMatNumber.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                
+            }
+        });
     }
 }
