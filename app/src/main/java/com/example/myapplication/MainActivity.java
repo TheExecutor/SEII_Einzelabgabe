@@ -37,10 +37,12 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 for(int i = 0; i < sortedMatNumber.size() - 1; i++){
-
-                    
+                    if(isPrime(sortedMatNumber.get(i))== true){
+                        sortedMatNumber.remove(i);
+                    }
                 }
 
+                
                 StringBuilder builder = new StringBuilder();
                 for (int value : sortedMatNumber) {
                     builder.append(value);
