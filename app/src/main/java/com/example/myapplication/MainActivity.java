@@ -7,7 +7,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -27,15 +29,16 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String matNumber = "";
-                int[] sortedMatNumber = new int[8];
+                List<Integer> sortedMatNumber = new ArrayList<>();
                 matNumber = etxtMatNumber.getText().toString();
 
-                for(int i = 0; i < sortedMatNumber.length; i++){
-                    sortedMatNumber[i] = Character.getNumericValue(matNumber.charAt(i));
+                for(int i = 0; i < sortedMatNumber.size(); i++){
+                    sortedMatNumber.add( Character.getNumericValue(matNumber.charAt(i)));
                 }
 
-                for(int i = 0; i < sortedMatNumber.length - 1; i++){
-                    Arrays.sort(sortedMatNumber);
+                for(int i = 0; i < sortedMatNumber.size() - 1; i++){
+
+                    
                 }
 
                 StringBuilder builder = new StringBuilder();
