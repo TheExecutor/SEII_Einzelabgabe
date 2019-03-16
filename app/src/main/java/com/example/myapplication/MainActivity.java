@@ -9,7 +9,6 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -30,20 +29,23 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String matNumber = "";
-                List<Integer> sortedMatNumber = new ArrayList<>();
+                List<Integer> unsortedMatNumber = new ArrayList<>();
+                List<Integer> matNumberWithoutPrimes = new ArrayList<>();
+                Integer[] sortedMatNumber = null;
                 matNumber = etxtMatNumber.getText().toString();
 
-                for(int i = 0; i < 8; i++){
-                    sortedMatNumber.add( Character.getNumericValue(matNumber.charAt(i)));
+                for (int i = 0; i < matNumber.length(); i++) {
+                    unsortedMatNumber.add(Character.getNumericValue(matNumber.charAt(i)));
                 }
 
-                for(int i = 0; i < sortedMatNumber.size(); i++){
-                    if(isPrime(sortedMatNumber.get(i))== true){
-                        sortedMatNumber.remove(i);
+                for (int number:unsortedMatNumber) {
+                    int checkNumber = number;
+                    if (!isPrime(checkNumber)) {
+                        matNumberWithoutPrimes.add(checkNumber);
                     }
                 }
-
-                Collections.sort(sortedMatNumber);
+                sortedMatNumber = matNumberWithoutPrimes.toArray(new Integer[matNumberWithoutPrimes.size()]);
+                Arrays.sort(sortedMatNumber);
 
                 StringBuilder builder = new StringBuilder();
                 for (int value : sortedMatNumber) {
@@ -51,13 +53,16 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 txtvSortedMatNumber.setText(builder.toString());
+
             }
         });
     }
 
-    boolean isPrime(int n) {
-        for(int i=2;i<n;i++) {
-            if(n%i==0)
+    private boolean isPrime(int n) {
+        if (n == 0) return false;
+        if (n == 1) return true;
+        for (int i = 2; i <= n / 2; i++) {
+            if (n % i == 0)
                 return false;
         }
         return true;
