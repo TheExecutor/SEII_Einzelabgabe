@@ -68,6 +68,15 @@ public class MainActivity extends AppCompatActivity  {
                 String matNumber = etxtMatNumber.getText().toString();
                 myTask = new MyTask();
                 myTask.execute(matNumber);
+
+                try {
+                    String answerFromServer = myTask.get();
+                    txtvAnswerFromServer.setText(answerFromServer);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                } catch (ExecutionException e) {
+                    e.printStackTrace();
+                }
             }
         });
     }
