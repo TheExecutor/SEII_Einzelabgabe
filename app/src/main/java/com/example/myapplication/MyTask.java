@@ -2,9 +2,17 @@ package com.example.myapplication;
 
 import android.os.AsyncTask;
 
-public class MyTask extends AsyncTask<Void, Void, String> {
+import java.io.BufferedReader;
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.Socket;
+
+public class MyTask extends AsyncTask<String, Void, String>  {
     @Override
-    protected String doInBackground(Void... voids) {
+    protected String doInBackground(String... strings) {
+
         return null;
     }
+
 }
