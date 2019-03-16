@@ -56,6 +56,13 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+        btnSendToServer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                
+            }
+        });
     }
 
     private boolean isPrime(int n) {
