@@ -10,9 +10,11 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 
-public class MainActivity extends AppCompatActivity {
 public class MainActivity extends AppCompatActivity  {
+
+    MyTask myTask;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +27,8 @@ public class MainActivity extends AppCompatActivity  {
         final EditText etxtMatNumber = findViewById(R.id.etxtMatNumber);
 
         final TextView txtvSortedMatNumber = findViewById(R.id.txtvSortedMatNumber);
+
+        final TextView txtvAnswerFromServer = findViewById(R.id.txtAnswerFromServer);
 
         btnSortMatNumber.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,8 +65,9 @@ public class MainActivity extends AppCompatActivity  {
         btnSendToServer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                
-
+                String matNumber = etxtMatNumber.getText().toString();
+                myTask = new MyTask();
+                myTask.execute(matNumber);
             }
         });
     }
