@@ -13,6 +13,11 @@ import java.util.List;
 import java.util.concurrent.ExecutionException;
 
 public class MainActivity extends AppCompatActivity  {
+    public static Button btnSendToServer;
+    public static Button btnSortMatNumber;
+    public static EditText etxtMatNumber;
+    public static TextView txtvSortedMatNumber;
+    public static TextView txtvAnswerFromServer;
 
     MyTask myTask;
 
@@ -21,14 +26,14 @@ public class MainActivity extends AppCompatActivity  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button btnSendToServer = findViewById(R.id.btnSendToServer);
-        Button btnSortMatNumber = findViewById(R.id.btnSortMatNumber);
+        btnSendToServer = findViewById(R.id.btnSendToServer);
+        btnSortMatNumber = findViewById(R.id.btnSortMatNumber);
 
-        final EditText etxtMatNumber = findViewById(R.id.etxtMatNumber);
+        etxtMatNumber = findViewById(R.id.etxtMatNumber);
 
-        final TextView txtvSortedMatNumber = findViewById(R.id.txtvSortedMatNumber);
+        txtvSortedMatNumber = findViewById(R.id.txtvSortedMatNumber);
 
-        final TextView txtvAnswerFromServer = findViewById(R.id.txtAnswerFromServer);
+        txtvAnswerFromServer = findViewById(R.id.txtAnswerFromServer);
 
         btnSortMatNumber.setOnClickListener(new View.OnClickListener() {
             @Override
