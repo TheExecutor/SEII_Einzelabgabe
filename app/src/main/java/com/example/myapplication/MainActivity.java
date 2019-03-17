@@ -55,15 +55,7 @@ public class MainActivity extends AppCompatActivity  {
                 }
 
                 Collections.sort(matNumberWithoutPrimes);
-
-
-                StringBuilder builder = new StringBuilder();
-                for (int value : matNumberWithoutPrimes) {
-                    builder.append(value);
-                }
-
-                txtvSortedMatNumber.setText(builder.toString());
-
+                printSortedMatNumber(matNumberWithoutPrimes);
             }
         });
 
@@ -84,6 +76,15 @@ public class MainActivity extends AppCompatActivity  {
                 }
             }
         });
+    }
+
+    private void printSortedMatNumber(List<Integer> matNumberWithoutPrimes) {
+        StringBuilder builder = new StringBuilder();
+        for (int value : matNumberWithoutPrimes) {
+            builder.append(value);
+        }
+
+        txtvSortedMatNumber.setText(builder.toString());
     }
 
     private boolean isPrime(int n) {
