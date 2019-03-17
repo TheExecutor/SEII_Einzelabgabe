@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
@@ -38,11 +39,9 @@ public class MainActivity extends AppCompatActivity  {
         btnSortMatNumber.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String matNumber = "";
+                String matNumber = etxtMatNumber.getText().toString();
                 List<Integer> unsortedMatNumber = new ArrayList<>();
                 List<Integer> matNumberWithoutPrimes = new ArrayList<>();
-                Integer[] sortedMatNumber = null;
-                matNumber = etxtMatNumber.getText().toString();
 
                 for (int i = 0; i < matNumber.length(); i++) {
                     unsortedMatNumber.add(Character.getNumericValue(matNumber.charAt(i)));
@@ -54,11 +53,12 @@ public class MainActivity extends AppCompatActivity  {
                         matNumberWithoutPrimes.add(checkNumber);
                     }
                 }
-                sortedMatNumber = matNumberWithoutPrimes.toArray(new Integer[matNumberWithoutPrimes.size()]);
-                Arrays.sort(sortedMatNumber);
+
+                Collections.sort(matNumberWithoutPrimes);
+
 
                 StringBuilder builder = new StringBuilder();
-                for (int value : sortedMatNumber) {
+                for (int value : matNumberWithoutPrimes) {
                     builder.append(value);
                 }
 
