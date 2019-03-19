@@ -8,7 +8,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
@@ -29,6 +28,7 @@ public class MainActivity extends AppCompatActivity  {
 
         btnSendToServer = findViewById(R.id.btnSendToServer);
         btnSortMatNumber = findViewById(R.id.btnSortMatNumber);
+
 
         etxtMatNumber = findViewById(R.id.etxtMatNumber);
 
